@@ -16,7 +16,7 @@
 	<h1>Salary Prediction</h1>
 
      <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}"method="post">
+    <form action="{{ url_for('predict')}}" method="post">
     	<input type="text" name="Years_of_Experience" placeholder="Years of Experience" required="required" />
 
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
@@ -24,7 +24,7 @@
 
    <br>
    <br>
-     <p>Predicted salary is: <b>Rs {{ prediction[0]|round|int }}/-</b></p>
+     <p>Predicted salary is: <b>{% if prediction %}Rs {{ prediction[0]|round|int }}/- {% endif %}</b></p>
 
  </div>
 
