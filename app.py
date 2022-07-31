@@ -12,7 +12,7 @@ def Home():
 def predict():
     form_data=request.form['Years_of_Experience']
     print(form_data)
-    feature = [[form_data]]
+    feature = [[int(form_data)]]
     prediction = model.predict(feature)
     return render_template("index.html", prediction=prediction)
 
